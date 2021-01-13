@@ -7,18 +7,23 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './Component/navbar/navbar.component';
 import { RegisterComponent } from './Component/register/register.component';
 import { LoginComponent } from './Component/login/login.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FooterComponent } from './Component/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FontAwesomeModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

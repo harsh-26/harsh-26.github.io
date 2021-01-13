@@ -1,0 +1,87 @@
+.navbar {
+   
+    padding: 1.25rem 2rem;
+    position: relative;
+    border-top: 2px solid #dcb14a;
+}
+
+.nav-link
+{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.navbar-brand {
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+}
+.navbar-light .navbar-brand {
+    color: #dcb14a;
+  }
+  
+.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
+    color: #dcb14a;
+}
+  .navbar-light .navbar-nav .nav-link {
+  
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+  }
+  
+  .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: #dcb14a;
+  }
+  
+
+.navbar-light  {
+    color: rgba(17, 17, 17, 0.99);
+    border-color: rgba(17, 17, 17, 0.1);
+  }
+  
+  
+.navbar-light .navbar-text {
+    color: rgba(17, 17, 17, 0.99);
+  }
+  
+.btn:focus, .btn.focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 177, 74, 0.25);
+  }
+
+  .btn-primary {
+    color: #212529;
+    background-color: #dcb14a;
+    border-color: #dcb14a;
+    margin-left: 15px;
+    border-radius: 1.2rem;
+  }
+  
+  .btn-primary:hover {
+    color: #212529;
+    background-color: #d6a32a;
+    border-color: #cc9b27;
+  }
+  
+  .btn-primary:focus, .btn-primary.focus {
+    box-shadow: 0 0 0 0.2rem rgba(220, 177, 74, 0.5);
+    box-shadow: none;
+  }
+
+#lblCartCount {
+    font-size: 12px;
+    background: black;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px;
+}
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}

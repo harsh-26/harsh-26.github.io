@@ -16,10 +16,13 @@ body {
 	border-radius: 3px;
 }
 .login-form {
+	height: 100%;
 	width: 400px;
-	margin: 30px auto;
+	margin: 7% auto;
+	
 }
 .login-form form {
+	
 	color: #999;
 	border-radius: 3px;
 	margin-bottom: 15px;
