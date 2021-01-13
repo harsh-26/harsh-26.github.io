@@ -1,0 +1,32 @@
+
+<div class="login-form">
+    <form action="/register" method="get">
+		<h2>Login</h2>
+		<hr>
+        <div class="form-group">
+        	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+        </div> 
+        <div class="d-flex justify-content-around form-group">
+        <div>
+              <!-- Remember me -->
+            <label class="form-check-label"><input type="checkbox" required="required">  Remember me</label>
+        </div>
+        <div>
+              <!-- Forgot password -->
+            <a href="">Forgot password?</a>
+        </div>
+        </div>
+		<div class="form-group text-center">
+            <button type="submit" class="btn btn-primary btn-lg">Login</button>
+        </div>
+
+    <div class="hint-text">Not a member?  <a [routerLink]="['/register']">Register</a></div>
+    </form>
+</div>
+
