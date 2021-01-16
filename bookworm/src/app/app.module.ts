@@ -9,6 +9,14 @@ import { RegisterComponent } from './Component/register/register.component';
 import { LoginComponent } from './Component/login/login.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './Component/footer/footer.component';
+import { CardComponent } from './Component/card/card.component';
+import { HomeComponent } from './Component/home/home.component';
+import { BooksComponent } from './Component/books/books.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BookService } from './Service/book.service';
+import { BookDetailsComponent } from './Component/book-details/book-details.component';
+
+
 
 @NgModule({
   declarations: [
@@ -16,16 +24,23 @@ import { FooterComponent } from './Component/footer/footer.component';
     NavbarComponent,
     RegisterComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    CardComponent,
+    HomeComponent,
+    BooksComponent,
+    BookDetailsComponent,
+ 
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
     
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
