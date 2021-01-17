@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -15,6 +14,7 @@ import { BooksComponent } from './Component/books/books.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BookService } from './Service/book.service';
 import { BookDetailsComponent } from './Component/book-details/book-details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -37,7 +37,9 @@ import { BookDetailsComponent } from './Component/book-details/book-details.comp
     AppRoutingModule,
     NgbModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     
   ],
   providers: [BookService],

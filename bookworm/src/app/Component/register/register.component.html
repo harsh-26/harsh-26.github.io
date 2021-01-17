@@ -1,28 +1,56 @@
 <div class="signup-form">
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form [formGroup]="registerform" (ngSubmit)="onSubmit(registerform)" >
 		<h2>Sign Up</h2>
 		<p>Please fill in this form to create an account!</p>
 		<hr>
         <div class="form-group">
-			<div class="row">
-				<div class="col"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
-				<div class="col"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"></div>
-			</div>        	
+				<div class="col" [ngClass]="{'has-error':formErrors.name}">
+                    <label class="label" for="first_name">Full Name:</label>
+                    <input type="text" class="form-control" name="name" placeholder="Full Name" formControlName="name"
+                    (blur)="logValidationErrors()"/>
+                <span>{{formErrors.name}}</span>    	
+                </div>
         </div>
         <div class="form-group">
-        	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        	<div class="col"  [ngClass]="{'has-error':formErrors.email}">
+                <label class="label" for="email">Email:</label>
+                <input type="text" class="form-control" name="email" placeholder="Email" formControlName="email"
+                (blur)="logValidationErrors()"/>
+                <span>{{formErrors.email}}</span>
+            </div>
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+            <div class="col"  [ngClass]="{'has-error':formErrors.password}">
+                <label class="label" for="email">Password:</label>
+                <input type="password" class="form-control" name="password"  formControlName="password"
+                (blur)="logValidationErrors()"/>
+                <span>{{formErrors.password}}</span>
+            </div>
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+            <div class="col"  [ngClass]="{'has-error':formErrors.confirm_password}">
+                <label class="label" for="confirm_password">Confirm Password:</label>
+                <input type="password" class="form-control"  name="confirm_password"  formControlName="confirm_password"
+                (blur)="logValidationErrors()"/>
+                <span>{{formErrors.confirm_password}}
+                </span>
+            </div>
         </div> 
         <div class="form-group">
-            <input type="text" class="form-control" name="address" placeholder="Address" required="required">
+            <div class="col"  [ngClass]="{'has-error':formErrors.Address}">
+                <label class="label" for="Address">Address:</label>
+                <input type="text" class="form-control" name="Address" formControlName="Address"
+                (blur)="logValidationErrors()"/>
+                <span>{{formErrors.Address}}</span>
+            </div>
         </div>  
         <div class="form-group">
-            <input type="text" class="form-control" name="mobileno" placeholder="Mobile no" required="required">
+            <div class="col"  [ngClass]="{'has-error':formErrors.mobileno}">
+                <label class="label" for="mobileno">Mobile Number:</label>
+                <input type="text" class="form-control" name="mobileno"  formControlName="mobileno"
+                (blur)="logValidationErrors()"/>
+                <span>{{formErrors.mobileno}}</span>
+            </div>
         </div>    
         <div class="form-group">
 			<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>

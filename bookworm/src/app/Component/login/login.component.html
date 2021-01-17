@@ -1,17 +1,23 @@
-
 <div class="login-form">
-    <form action="/register" method="get">
+    <form [formGroup]="loginform" (ngSubmit)="onSubmit(loginform)">
 		<h2>Login</h2>
 		<hr>
         <div class="form-group">
-        	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        	<div class="col"  [ngClass]="{'has-error':formErrors.email}">
+                <label class="label" for="email">Email:</label>
+                <input type="text" class="form-control" name="email" placeholder="email" formControlName="email"
+                (blur)="logValidationErrors()"/>
+                <span>{{formErrors.email}}</span>
+            </div>
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+            <div class="col"  [ngClass]="{'has-error':formErrors.password}">
+                <label class="label" for="email">Password:</label>
+                <input type="text" class="form-control" name="password" placeholder="password" formControlName="password"
+                (blur)="logValidationErrors()"/>
+                <span>{{formErrors.password}}</span>
+            </div>
         </div>
-		<div class="form-group">
-            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
-        </div> 
         <div class="d-flex justify-content-around form-group">
         <div>
               <!-- Remember me -->

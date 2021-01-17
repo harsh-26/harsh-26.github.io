@@ -9,6 +9,7 @@
     -webkit-filter: grayscale(40%);
     filter: grayscale(40%);
     transition: all 0.3s;
+    height: 300px;
 }
   
 .product-overlay
@@ -19,7 +20,6 @@
     bottom: 0;
     display: flex;
     align-items: flex-end;
-    
     justify-content: center;
     padding: 1rem 0;
     opacity: 0;
