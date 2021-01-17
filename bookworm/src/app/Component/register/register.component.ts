@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   registerform:FormGroup;
   registerobj:Iusers;
   submitted=false;
-
+  formData: FormData;
 
   validationMessages={
     'name':{
@@ -94,25 +94,10 @@ export class RegisterComponent implements OnInit {
       this.logValidationErrors(this.registerform)
     });
   }
-  get name(){
-    return this.registerform.get('name');
+
+  get f() {
+    return this.registerform.controls;
   }
-  get email(){
-    return this.registerform.get('email')
-  }
-  get password(){
-    return this.registerform.get('password')
-  }
-  get confirm_password(){
-    return this.registerform.get('confirm_password')
-  }
-  get Address(){
-    return this.registerform.get('Address')
-  }
-  get mobileno(){
-    return this.registerform.get('mobileno')
-  }
-  
 
   onSubmit(registerform:FormGroup){
     this.submitted = true;
@@ -120,18 +105,22 @@ export class RegisterComponent implements OnInit {
       console.log(registerform.value)
       return;
     }
-    this.mapFormValues(this.registerform)
-   this.postdata(this.registerobj)
+    this.formData = new FormData();
+    this.formData.append('name',this.f.name.value)
+    this.formData.append('email',this.f.email.value)
+    this.formData.append('password',this.f.password.value)
+    this.formData.append('address',this.f.Address.value)
+    this.formData.append('mobileno',this.f.mobileno.value)
+
+
+
+
+
+
+ 
+   this.postdata(this.formData)
   }
 
-  mapFormValues(form : FormGroup){
-    this.registerobj = new User(null ,'','','',null,'',null,'',null,null,false);
-    this.registerobj.name = form.controls.name.value;
-    this.registerobj.password = form.controls.password.value;
-    this.registerobj.email = form.controls.email.value;
-    this.registerobj.address = form.controls.Address.value;
-    this.registerobj.mobileno = form.controls.mobileno.value;
-  }
 
   postdata(regobj){
     this.usrService.postuser(regobj).subscribe();

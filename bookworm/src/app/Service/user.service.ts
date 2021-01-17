@@ -10,8 +10,8 @@ export class UserService {
   url = "https://localhost:44305/api/"
   constructor(private _http : HttpClient ) { }
 
-  postuser(regobj) : Observable<any>{
-    return this._http.post<any>(this.url +"Usrs/",regobj)
+  postuser(regobj :any) : Observable<any>{
+    return this._http.post<any>(this.url +"Usrs",regobj)
   }
 
 }
