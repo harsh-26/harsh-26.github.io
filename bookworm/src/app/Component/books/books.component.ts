@@ -68,4 +68,9 @@ export class BooksComponent implements OnInit {
     }
   }
 
+  consumeData(event){
+    console.log("hi");
+    console.log(event);
+  }
+
 }

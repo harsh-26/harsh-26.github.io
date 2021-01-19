@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Ibook } from 'src/app/Interface/ibook';
+import { BookService } from 'src/app/Service/book.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  popularBooks : Ibook[];
+  constructor(private popserv : BookService) { 
+  
+  }
 
   ngOnInit(): void {
+    this.popserv.getPopularBook().subscribe(data => this.popularBooks = data)
   }
 
 }

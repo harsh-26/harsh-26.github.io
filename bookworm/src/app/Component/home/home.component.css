@@ -1,6 +1,4 @@
-.{
-    width: 100%;
-}
+
 img{
     margin-left: 50px;
     height: 500px;
@@ -8,5 +6,9 @@ img{
 }
 button{
     margin-top: 20px;
+}
 
+.wrapper{
+    margin-left: 10px;
+    margin-right: 10px;
 }

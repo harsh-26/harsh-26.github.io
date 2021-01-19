@@ -15,6 +15,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { BookService } from './Service/book.service';
 import { BookDetailsComponent } from './Component/book-details/book-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CartComponent } from './Component/cart/cart.component';
+import { LendLibraryComponent } from './Component/lend-library/lend-library.component';
+import { CheckoutComponent } from './Component/checkout/checkout.component';
+import { AboutUsComponent } from './Component/about-us/about-us.component';
 
 
 
@@ -29,6 +33,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     BooksComponent,
     BookDetailsComponent,
+    CartComponent,
+    LendLibraryComponent,
+    CheckoutComponent,
+    AboutUsComponent,
  
   
   ],

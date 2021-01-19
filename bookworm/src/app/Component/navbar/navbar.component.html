@@ -18,7 +18,7 @@
           <a class="nav-link" [routerLink]="'/books'" (click)="isMenuCollapsed = true">Books</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'.'"  (click)="isMenuCollapsed = true">Lending Library</a>
+          <a class="nav-link" [routerLink]="'/lending'"  (click)="isMenuCollapsed = true">Lending Library</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">My Shelf</a>
@@ -30,7 +30,7 @@
           <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">My Account</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">About Us</a>
+          <a class="nav-link" [routerLink]="'/aboutus'" (click)="isMenuCollapsed = true">About Us</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Contact Us</a>
@@ -42,14 +42,21 @@
       
       <ul class="navbar-nav nav-flex-icons">
         <li class="nav-item">
-          <a class="nav-link waves-effect">
+          <a  [routerLink]="'/cart'" class="nav-link waves-effect">
             <i class="fa" style="font-size:24px">&#xf07a;</i>
             <span class='badge badge-warning' id='lblCartCount'> 5 </span>
             <span class="clearfix d-none d-sm-inline-block"> Cart </span>
           </a>
         </li>
-        <button class ="btn btn-primary" [routerLink]="['/register']" >Sign Up/ Login</button>
+        <div *ngIf="!isLogin()">
+          <button class ="btn btn-primary" [routerLink]="['/register']" >Sign Up/ Login</button>
+        </div>
+        <div *ngIf="isLogin()">
+        <h5 class="d-sm-inline-block">{{username}}</h5> 
+        <button class="btn btn-primary" (click)= "logout()" [routerLink]="['/home']">Logout</button>
+       </div>  
         </ul>
+        
     </div>
     
   </nav>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/Class/user';
 import { Iusers } from 'src/app/Interface/iuser';
 import { UserService } from 'src/app/Service/user.service';
 import { MustMatch } from 'src/app/shared/mustmatch';
@@ -111,14 +110,7 @@ export class RegisterComponent implements OnInit {
     this.formData.append('password',this.f.password.value)
     this.formData.append('address',this.f.Address.value)
     this.formData.append('mobileno',this.f.mobileno.value)
-
-
-
-
-
-
- 
-   this.postdata(this.formData)
+    this.postdata(this.formData)
   }
 
 

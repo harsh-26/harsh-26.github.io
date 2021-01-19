@@ -21,7 +21,12 @@
 .navbar-light .navbar-brand {
     color: #dcb14a;
   }
-  
+  h5{
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: rgba(17, 17, 17, 0.99);
+    margin-top: 10px;
+  }
 .navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
     color: #dcb14a;
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Iusers } from 'src/app/Interface/iuser';
+import { UserService } from 'src/app/Service/user.service';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +13,9 @@ export class LoginComponent implements OnInit {
 
   loginform:FormGroup;
   registerobj:Iusers;
+  formData : FormData;
   submitted=false;
-
+  loginDetails : Iusers;
   validationMessages={
     'email':{
       'required':'email required',
@@ -49,7 +52,7 @@ export class LoginComponent implements OnInit {
       }
     });
   }
-  constructor(public fb:FormBuilder) { }
+  constructor(public fb:FormBuilder,private _login : UserService,private router: Router) { }
 
   ngOnInit() {
     this.loginform=this.fb.group({
@@ -60,8 +63,24 @@ export class LoginComponent implements OnInit {
       this.logValidationErrors(this.loginform)
     });
   }
-  onSubmit(logform:FormGroup){
-    console.log("end");
+
+  get f(){
+    return this.loginform.controls;
   }
+  onSubmit(logform:FormGroup){
+    this.formData = new FormData();
+    this.formData.append('email',this.f.email.value)
+    this.formData.append('password',this.f.password.value)
+    this._login.login(this.formData).subscribe((data) =>
+    {
+      this.loginDetails = data;
+      console.log(this.loginDetails);
+      localStorage.setItem('usr',JSON.stringify(this.loginDetails))
+      this.router.navigate(['/home'])
+    },error=>{
+      console.log(error);
+    })
+  }
+  
 
 }

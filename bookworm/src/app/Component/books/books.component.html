@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <section class="py-5">
     <div class="container p-0">
       <div class="row">
@@ -29,8 +30,6 @@
             <li class="mb-2"><a class="reset-anchor" href="#">Cell Phone bluetooth headsets</a></li>
             <li class="mb-2"><a class="reset-anchor" href="#">Keyboards</a></li>
           </ul>
-         
-       
         </div>
         <!-- SHOP LISTING-->
         <div class="col-lg-9 order-1 order-lg-2 mb-5 mb-lg-0">
@@ -54,7 +53,7 @@
             </div>
             
             <div *ngFor = "let a of books">
-               <app-card [singlebook] = a></app-card>
+               <app-card  [singlebook] = a ></app-card>
             </div>
         
  </div>
